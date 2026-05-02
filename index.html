@@ -60,6 +60,8 @@
     </div>
   </nav>
 
+  <section id="home"></section>
+
   <section class="pt-32 text-center">
     <h1 class="text-[62.592px] font-extrabold text-black m-[0px_0px_24px]"
       style="font-family: BlinkMacSystemFont, -apple-system, sans-serif;">
@@ -358,7 +360,7 @@
             <div class="w-3 bg-lime-400 h-16"></div>
             <div class="w-3 bg-gray-300 h-12"></div>
             <div class="w-3 bg-gray-300 h-8"></div>
-            <div class="w-3 bg-lime-400 h-20"></div>
+            <div class="w-3 bg-lime-400 h-18"></div>
             <div class="w-3 bg-gray-300 h-10"></div>
           </div>
         </div>
@@ -408,13 +410,272 @@
             <pre>
   SELECT user_id, COUNT(*)
   FROM events
-  WHERE ts > '2026-01'
-  GROUP BY 1;
+  WHERE ts > <span style="color: aqua;">'2026-01'</span> 
+  GROUP BY 1 -- 42ms;<span><img src="./lightening.png" alt="lightening" srcset=""></span>
   </pre>
           </div>
         </div>
 
       </div>
+    </div>
+  </section>
+
+  <section class="bg-gray-50 py-20 px-6">
+    <div class="max-w-7xl mx-auto text-center">
+
+      <!-- Tag -->
+      <p class="text-xs tracking-widest text-gray-500 flex items-center justify-center gap-2">
+        <span class="w-2 h-2 bg-lime-400 rounded-full"></span>
+        PRICING
+      </p>
+
+      <!-- Heading -->
+      <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mt-4">
+        Simple, transparent pricing
+      </h2>
+
+      <!-- Toggle -->
+      <div class="flex justify-center items-center mt-6 gap-3">
+        <div class="flex bg-gray-200 rounded-xl p-1">
+          <button id="monthlyBtn" class="px-4 py-1 text-sm rounded-lg bg-lime-400 font-medium">
+            Monthly
+          </button>
+          <button id="yearlyBtn" class="px-4 py-1 text-sm text-gray-600 rounded-lg">
+            Yearly
+          </button>
+        </div>
+        <span class="text-green-600 text-sm">Save 25%</span>
+      </div>
+
+      <!-- Cards -->
+      <div class="grid gap-8 mt-16 md:grid-cols-3">
+
+        <!-- Starter -->
+        <div class="bg-white rounded-2xl p-8 border border-gray-200 text-left shadow-sm">
+          <h3 class="text-lg font-semibold">Starter</h3>
+          <p class="text-sm text-gray-500 mb-6">For small teams getting started</p>
+
+          <div class="text-4xl font-bold">
+            <span class="text-lg align-top">$</span><span id="starterPrice">30</span>
+          </div>
+
+          <p id="starterBilling" class="text-sm text-gray-500">per seat / month<br>Billed monthly</p>
+
+          <span id="starterNote" class="hidden inline-block bg-lime-400 text-xs px-2 py-1 rounded-md mt-2">
+            $264 billed annually
+          </span>
+
+          <button class="w-full mt-6 py-2 rounded-lg border">Get Started</button>
+
+          <ul class="mt-6 space-y-3 text-sm text-gray-600">
+            <li class="flex gap-2">✔ Upto 5 team members</li>
+            <li class="flex gap-2">✔ 1 billion events / month</li>
+            <li class="flex gap-2">✔ 7-day data retention</li>
+            <li class="flex gap-2">✔ Community support</li>
+          </ul>
+        </div>
+
+        <!-- Pro -->
+        <div class="relative bg-white rounded-2xl p-8 border-2 border-lime-400 text-left shadow-sm">
+
+          <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-lime-400 text-xs px-3 py-1 rounded-full">
+            Most Popular
+          </span>
+
+          <h3 class="text-lg font-semibold">Pro</h3>
+          <p class="text-sm text-gray-500 mb-6">For scaling data teams</p>
+
+          <div class="text-4xl font-bold">
+            <span class="text-lg align-top">$</span><span id="proPrice">100</span>
+          </div>
+
+          <p id="proBilling" class="text-sm text-gray-500">per seat / month<br>Billed monthly</p>
+
+          <span id="proNote" class="hidden inline-block bg-lime-400 text-xs px-2 py-1 rounded-md mt-2">
+            $900 billed annually
+          </span>
+
+          <button class="w-full mt-6 py-2 rounded-lg bg-lime-400 font-semibold">
+            Get Started
+          </button>
+
+          <ul class="mt-6 space-y-3 text-sm text-gray-600">
+            <li class="flex gap-2">✔ Unlimited team members</li>
+            <li class="flex gap-2">✔ 50 billion events / month</li>
+            <li class="flex gap-2">✔ Unlimited data retention</li>
+            <li class="flex gap-2">✔ Priority support + SLA</li>
+            <li class="flex gap-2">✔ SSO & audit logs</li>
+          </ul>
+        </div>
+
+        <!-- Enterprise -->
+        <div class="bg-white rounded-2xl p-8 border border-gray-200 text-left shadow-sm">
+          <h3 class="text-lg font-semibold">Enterprise</h3>
+          <p class="text-sm text-gray-500 mb-6">For mission-critical deployments</p>
+
+          <div class="text-4xl font-bold">
+            <span class="text-lg align-top">$</span><span id="enterprisePrice">500</span>
+          </div>
+
+          <p id="enterpriseBilling" class="text-sm text-gray-500">starts from / month<br>Billed monthly</p>
+
+          <span id="enterpriseNote" class="hidden inline-block bg-lime-400 text-xs px-2 py-1 rounded-md mt-2">
+            $4,500 billed annually
+          </span>
+
+          <button class="w-full mt-6 py-2 rounded-lg border">Contact Sales</button>
+
+          <ul class="mt-6 space-y-3 text-sm text-gray-600">
+            <li class="flex gap-2">✔ Everything in Pro</li>
+            <li class="flex gap-2">✔ Dedicated infrastructure</li>
+            <li class="flex gap-2">✔ Custom integrations</li>
+            <li class="flex gap-2">✔ 24/7 support</li>
+            <li class="flex gap-2">✔ 99.99% SLA guarantee</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-gray-50 py-20 px-6">
+    <div class="max-w-3xl mx-auto text-center">
+
+      <!-- Tag -->
+      <p class="text-xs tracking-widest text-gray-500 flex justify-center items-center gap-2">
+        <span class="w-2 h-2 bg-lime-400 rounded-full"></span>
+        FAQ
+      </p>
+
+      <!-- Heading -->
+      <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mt-4">
+        Common questions,<br />straight answers
+      </h2>
+
+      <!-- Controls -->
+      <div class="flex justify-center gap-3 mt-6">
+        <button id="expandAll" class="px-4 py-1 text-sm border rounded-md hover:bg-gray-100">
+          Expand All
+        </button>
+        <button id="collapseAll" class="px-4 py-1 text-sm border rounded-md hover:bg-gray-100">
+          Collapse All
+        </button>
+      </div>
+
+      <!-- FAQ List -->
+      <div class="mt-10 space-y-4 text-left">
+
+        <!-- Item -->
+        <div class="faq-item bg-white border rounded-xl p-4">
+          <div class="flex justify-between items-center cursor-pointer faq-question">
+            <p class="font-medium">How long does the free trial last?</p>
+            <span class="icon w-6 h-6 flex items-center justify-center rounded-full border text-sm">+</span>
+          </div>
+          <div class="faq-answer hidden mt-3 text-sm text-gray-600">
+            Every plan includes a 14-day free trial with full access to all features. No credit card required to get
+            started. At the end of the trial, you can choose a plan or export your data.
+          </div>
+        </div>
+
+        <!-- Item -->
+        <div class="faq-item bg-white border rounded-xl p-4">
+          <div class="flex justify-between items-center cursor-pointer faq-question">
+            <p class="font-medium">Can I switch plans later?</p>
+            <span class="icon w-6 h-6 flex items-center justify-center rounded-full border text-sm">+</span>
+          </div>
+          <div class="faq-answer hidden mt-3 text-sm text-gray-600">
+            Yes. Upgrade or downgrade any time from your account settings. When upgrading, you only pay the prorated
+            difference.
+          </div>
+        </div>
+
+        <!-- Item -->
+        <div class="faq-item bg-white border rounded-xl p-4">
+          <div class="flex justify-between items-center cursor-pointer faq-question">
+            <p class="font-medium">What data sources do you support?</p>
+            <span class="icon w-6 h-6 flex items-center justify-center rounded-full border text-sm">+</span>
+          </div>
+          <div class="faq-answer hidden mt-3 text-sm text-gray-600">
+            We support PostgreSQL, MySQL, BigQuery, Snowflake, Redshift, and most REST APIs.
+          </div>
+        </div>
+
+        <!-- Item -->
+        <div class="faq-item bg-white border rounded-xl p-4">
+          <div class="flex justify-between items-center cursor-pointer faq-question">
+            <p class="font-medium">Is my data secure?</p>
+            <span class="icon w-6 h-6 flex items-center justify-center rounded-full border text-sm">+</span>
+          </div>
+          <div class="faq-answer hidden mt-3 text-sm text-gray-600">
+            Yes. All data is encrypted at rest and in transit. We are SOC 2 compliant.
+          </div>
+        </div>
+
+        <!-- Item -->
+        <div class="faq-item bg-white border rounded-xl p-4">
+          <div class="flex justify-between items-center cursor-pointer faq-question">
+            <p class="font-medium">Do you offer onboarding support?</p>
+            <span class="icon w-6 h-6 flex items-center justify-center rounded-full border text-sm">+</span>
+          </div>
+          <div class="faq-answer hidden mt-3 text-sm text-gray-600">
+            Yes. Pro and Enterprise plans include onboarding assistance and dedicated support.
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-gray-50 px-6 py-20">
+    <div class="max-w-6xl mx-auto">
+
+      <div class="rounded-3xl px-8 py-16 md:py-20 text-center
+                  bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900
+                  relative overflow-hidden">
+
+        <!-- subtle green glow -->
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_left,rgba(163,230,53,0.15),transparent_40%)]"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_right,rgba(163,230,53,0.15),transparent_40%)]"></div>
+
+        <!-- Content -->
+        <div class="relative z-10">
+
+          <!-- Tag -->
+          <p class="text-xs tracking-widest text-gray-400 flex justify-center items-center gap-2">
+            <span class="w-2 h-2 bg-lime-400 rounded-full"></span>
+            GET STARTED TODAY
+          </p>
+
+          <!-- Heading -->
+          <h2 class="text-3xl md:text-5xl font-bold text-white mt-6 leading-tight">
+            Ready to accelerate<br class="hidden md:block" />
+            your data?
+          </h2>
+
+          <!-- Subtext -->
+          <p class="text-gray-400 mt-4 max-w-xl mx-auto text-sm md:text-base">
+            Join 2,000+ teams shipping faster with sub-second analytics.
+            Free for 14 days.
+          </p>
+
+          <!-- Buttons -->
+          <div class="flex flex-col sm:flex-row justify-center gap-4 mt-8">
+
+            <button onclick="scrollToTop()"
+              class="bg-lime-400 text-black font-semibold px-6 py-3 rounded-xl flex items-center justify-center gap-2 transition duration-300 ease-out hover:-translate-y-1 hover:shadow-lg hover:shadow-lime-400/20">
+              Start Free Trial →
+            </button>
+
+            <button onclick="scrollToTop()"
+              class="border border-gray-600 text-white px-6 py-3 rounded-xl transition duration-300 ease-out hover:-translate-y-1 hover:shadow-lg hover:shadow-black/40 hover:bg-gray-800">
+              Talk to Sales
+            </button>
+
+          </div>
+
+        </div>
+      </div>
+
     </div>
   </section>
 

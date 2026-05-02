@@ -60,3 +60,92 @@ setTimeout(() => animateValue("stat3", 0, 10, 800), 600);
 setTimeout(() => {
   document.getElementById("stat2").innerText = "99.99";
 }, 1300);
+
+// Pricing section
+const monthlyBtn = document.getElementById("monthlyBtn");
+const yearlyBtn = document.getElementById("yearlyBtn");
+
+monthlyBtn.onclick = () => {
+  monthlyBtn.classList.add("bg-lime-400");
+  yearlyBtn.classList.remove("bg-lime-400");
+
+  // Prices
+  starterPrice.textContent = "30";
+  proPrice.textContent = "100";
+  enterprisePrice.textContent = "500";
+
+  // Billing text
+  starterBilling.innerHTML = "per seat / month<br>Billed monthly";
+  proBilling.innerHTML = "per seat / month<br>Billed monthly";
+  enterpriseBilling.innerHTML = "starts from / month<br>Billed monthly";
+
+  // Hide yearly notes
+  starterNote.classList.add("hidden");
+  proNote.classList.add("hidden");
+  enterpriseNote.classList.add("hidden");
+};
+
+yearlyBtn.onclick = () => {
+  yearlyBtn.classList.add("bg-lime-400");
+  monthlyBtn.classList.remove("bg-lime-400");
+
+  // Prices
+  starterPrice.textContent = "22";
+  proPrice.textContent = "75";
+  enterprisePrice.textContent = "375";
+
+  // Billing text
+  starterBilling.innerHTML = "per seat / month";
+  proBilling.innerHTML = "per seat / month";
+  enterpriseBilling.innerHTML = "starts from / month";
+
+  // Show yearly notes
+  starterNote.classList.remove("hidden");
+  proNote.classList.remove("hidden");
+  enterpriseNote.classList.remove("hidden");
+};
+
+const items = document.querySelectorAll(".faq-item");
+const expandAllBtn = document.getElementById("expandAll");
+const collapseAllBtn = document.getElementById("collapseAll");
+
+function toggleItem(item, expand) {
+  const answer = item.querySelector(".faq-answer");
+  const icon = item.querySelector(".icon");
+
+  if (expand) {
+    answer.classList.remove("hidden");
+    icon.textContent = "✕";
+    icon.classList.add("bg-lime-400", "border-lime-400");
+  } else {
+    answer.classList.add("hidden");
+    icon.textContent = "+";
+    icon.classList.remove("bg-lime-400", "border-lime-400");
+  }
+}
+
+// Individual toggle
+items.forEach((item) => {
+  item.querySelector(".faq-question").addEventListener("click", () => {
+    const isOpen = !item
+      .querySelector(".faq-answer")
+      .classList.contains("hidden");
+    toggleItem(item, !isOpen);
+  });
+});
+
+// Expand All
+expandAllBtn.onclick = () => {
+  items.forEach((item) => toggleItem(item, true));
+};
+
+// Collapse All
+collapseAllBtn.onclick = () => {
+  items.forEach((item) => toggleItem(item, false));
+};
+
+function scrollToTop() {
+  document.getElementById("home").scrollIntoView({
+    behavior: "smooth",
+  });
+}
