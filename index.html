@@ -148,37 +148,273 @@
 
     </section>
 
-    <div class="max-w-6xl mx-6 mt-8 border border-gray-200 rounded-[12px] bg-white m-[20px]">
+    <section class="max-w-6xl mx-[20px] mt-10 bg-white border border-gray-200 rounded-[12px] overflow-hidden">
 
-      <div class="flex items-center justify-between p-[20px] py-[16px]">
-
-        <!-- Left: Heading -->
+      <!-- Top Header -->
+      <div class="flex items-center justify-between px-[20px] py-[16px]">
         <h3 class="text-[14px] text-[#111111]" style="font-family: BlinkMacSystemFont, -apple-system, sans-serif;">
           Recent Pipelines
         </h3>
 
-        <!-- Right: Dropdown -->
         <button
-          class="flex items-center gap-1 text-[12px] text-[#999999] px-[12px] py-[4px] border border-gray-200 rounded-[5px] hover:bg-gray-100 transition"
-          onclick="handleClick('dropdown')">
-          All Items
+          class="flex items-center gap-1 text-[12px] text-[#999999] px-[12px] py-[4px] border border-gray-200 rounded-[5px]">
+          All teams
           <span class="text-[10px]">▼</span>
         </button>
+      </div>
+
+      <!-- Column Headers -->
+      <div class="grid grid-cols-5 items-center px-[20px] py-[12px] bg-[#00000004] text-[11px] text-[#999999]"
+        style="font-family: BlinkMacSystemFont, -apple-system, sans-serif;">
+        <span>PIPELINE</span>
+        <span class="text-center">EVENTS / HR</span>
+        <span class="text-center">LATENCY</span>
+        <span class="text-center">UPTIME</span>
+        <span class="text-center">STATUS</span>
+      </div>
+
+      <!-- Rows -->
+      <div class="divide-y">
+
+        <!-- Row 1 -->
+        <div class="grid grid-cols-5 items-center px-[20px] py-[14px]">
+
+          <div class="flex items-center gap-3">
+            <span class="text-[11px] px-2 py-1 rounded bg-green-100 text-green-700">P1</span>
+            <span class="text-[14px] text-black">Checkout Funnel</span>
+          </div>
+
+          <span class="text-center text-[14px] text-black">1.2M</span>
+          <span class="text-center text-[14px] text-black">34ms</span>
+          <span class="text-center text-[14px] text-black">99.98%</span>
+
+          <div class="flex justify-center">
+            <span class="text-[12px] px-3 py-1 rounded-full bg-green-100 text-green-700">
+              Active
+            </span>
+          </div>
+
+        </div>
+
+        <!-- Row 2 -->
+        <div class="grid grid-cols-5 items-center px-[20px] py-[14px]">
+
+          <div class="flex items-center gap-3">
+            <span class="text-[11px] px-2 py-1 rounded bg-yellow-100 text-yellow-700">P2</span>
+            <span class="text-[14px] text-black">User Onboarding</span>
+          </div>
+
+          <span class="text-center text-[14px] text-black">847K</span>
+          <span class="text-center text-[14px] text-black">52ms</span>
+          <span class="text-center text-[14px] text-black">99.91%</span>
+
+          <div class="flex justify-center">
+            <span class="text-[12px] px-3 py-1 rounded-full bg-yellow-100 text-yellow-700">
+              Pending
+            </span>
+          </div>
+
+        </div>
+
+        <!-- Row 3 -->
+        <div class="grid grid-cols-5 items-center px-[20px] py-[14px] opacity-50">
+
+          <div class="flex items-center gap-3">
+            <span class="text-[11px] px-2 py-1 rounded bg-gray-200 text-gray-600">P3</span>
+            <span class="text-[14px] text-black">Revenue Tracker</span>
+          </div>
+
+          <span class="text-center text-[14px] text-black">2.1M</span>
+          <span class="text-center text-[14px] text-black">28ms</span>
+          <span class="text-center text-[14px] text-black">99.99%</span>
+
+          <div class="flex justify-center">
+            <span class="text-[12px] px-3 py-1 rounded-full bg-green-100 text-green-700">
+              Active
+            </span>
+          </div>
+
+        </div>
+
+        <!-- Row 4 -->
+        <div class="grid grid-cols-5 items-center px-[20px] py-[14px] opacity-30">
+
+          <div class="flex items-center gap-3">
+            <span class="text-[11px] px-2 py-1 rounded bg-gray-200 text-gray-600">P4</span>
+            <span class="text-[14px] text-black">A/B Experiments</span>
+          </div>
+
+          <span class="text-center text-[14px] text-black">423K</span>
+          <span class="text-center text-[14px] text-black">61ms</span>
+          <span class="text-center text-[14px] text-black">99.87%</span>
+
+          <div class="flex justify-center">
+            <span class="text-[12px] px-3 py-1 rounded-full bg-gray-200 text-gray-600">
+              Draft
+            </span>
+          </div>
+
+        </div>
 
       </div>
 
-    </div>
+    </section>
 
-    <div
-      class="flex items-center justify-between mx-[0] my-[0px] px-[20px] py-[12px] bg-[white] text-[11px] text-[#999999]"
-      style="font-family: BlinkMacSystemFont, -apple-system, sans-serif;">
+    <section class="bg-gray-50 py-24">
 
-      <span class="w-1/5 text-center">PIPELINES</span>
-      <span class="w-1/5 text-center">EVENTS / HR</span>
-      <span class="w-1/5 text-center">LATENCY</span>
-      <span class="w-1/5 text-center">UPTIME</span>
-      <span class="w-1/5 text-center">STATUS</span>
+      <!-- Top Label -->
+      <p class="text-center text-[12px] tracking-[2px] text-gray-400 mb-16"
+        style="font-family: BlinkMacSystemFont, -apple-system, sans-serif;">
+        PERFORMANCE THAT SPEAKS FOR ITSELF
+      </p>
 
+      <!-- Stats -->
+      <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 items-center text-center">
+
+        <!-- Stat 1 -->
+        <div>
+          <div class="flex justify-center items-end gap-2">
+            <span id="stat1" class="text-[72px] font-extrabold bg-[#D4FF00] px-1 py-1 rounded-[8px]">
+              0
+            </span>
+            <span class="text-[28px] text-gray-500">ms</span>
+          </div>
+          <p class="text-gray-500 text-[14px] mt-4">
+            Average query response time <br />
+            across 10B+ row datasets
+          </p>
+        </div>
+
+        <!-- Stat 2 -->
+        <div>
+          <div class="flex justify-center items-end gap-2">
+            <span id="stat2" class="text-[72px] font-extrabold">
+              0
+            </span>
+            <span class="text-[28px] text-gray-500">%</span>
+          </div>
+          <p class="text-gray-500 text-[14px] mt-4">
+            Guaranteed uptime SLA for all <br />
+            enterprise customers
+          </p>
+        </div>
+
+        <!-- Stat 3 -->
+        <div>
+          <div class="flex justify-center items-end gap-2">
+            <span id="stat3" class="text-[72px] font-extrabold">
+              0
+            </span>
+            <span class="text-[28px] text-gray-500">x</span>
+          </div>
+          <p class="text-gray-500 text-[14px] mt-4">
+            Faster than legacy warehouses at <br />
+            one-tenth the cost
+          </p>
+        </div>
+
+      </div>
+
+    </section>
+
+  </section>
+
+  <section class="bg-gray-50 py-20 px-6">
+    <div class="max-w-7xl mx-auto text-center">
+
+      <!-- Top Label -->
+      <p class="text-sm text-gray-500 tracking-wide flex justify-center items-center gap-2">
+        <span class="w-2 h-2 bg-lime-400 rounded-full"></span>
+        THE ENGINE
+      </p>
+
+      <!-- Heading -->
+      <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mt-4">
+        Everything your data team<br class="hidden md:block" />
+        actually needs
+      </h2>
+
+      <!-- Cards -->
+      <div class="grid md:grid-cols-3 gap-8 mt-16">
+
+        <!-- Card 1 -->
+        <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-200 text-left">
+          <div class="w-12 h-12 flex items-center justify-center bg-gray-100 rounded-lg mb-6">
+            📈
+          </div>
+
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">
+            Real-Time Analytics
+          </h3>
+
+          <p class="text-gray-500 text-sm leading-relaxed mb-6">
+            Stream, transform, and visualize data the instant it arrives. No batching, no waiting, no stale dashboards.
+          </p>
+
+          <!-- Fake chart -->
+          <div class="bg-gray-100 rounded-xl p-4 flex items-end gap-2 h-24">
+            <div class="w-3 bg-gray-300 h-6"></div>
+            <div class="w-3 bg-gray-300 h-10"></div>
+            <div class="w-3 bg-lime-400 h-16"></div>
+            <div class="w-3 bg-gray-300 h-12"></div>
+            <div class="w-3 bg-gray-300 h-8"></div>
+            <div class="w-3 bg-lime-400 h-20"></div>
+            <div class="w-3 bg-gray-300 h-10"></div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-200 text-left">
+          <div class="w-12 h-12 flex items-center justify-center bg-gray-100 rounded-lg mb-6">
+            🖥️
+          </div>
+
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">
+            Pipeline Orchestration
+          </h3>
+
+          <p class="text-gray-500 text-sm leading-relaxed mb-6">
+            Build fault-tolerant data pipelines with visual drag-and-drop. Auto-retry, dead-letter queues, and full
+            observability built in.
+          </p>
+
+          <!-- Flow -->
+          <div class="bg-gray-100 rounded-xl p-4 flex items-center justify-between text-sm">
+            <span class="bg-lime-400 text-black px-3 py-1 rounded-md font-medium">Ingest</span>
+            <span class="text-gray-400">→</span>
+            <span class="bg-gray-300 px-3 py-1 rounded-md">Transform</span>
+            <span class="text-gray-400">→</span>
+            <span class="bg-gray-300 px-3 py-1 rounded-md">Deliver</span>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-200 text-left">
+          <div class="w-12 h-12 flex items-center justify-center bg-gray-100 rounded-lg mb-6">
+            &lt;/&gt;
+          </div>
+
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">
+            SQL-First Interface
+          </h3>
+
+          <p class="text-gray-500 text-sm leading-relaxed mb-6">
+            Write standard SQL against any source. Auto-completion, version control, and collaborative editing come
+            standard.
+          </p>
+
+          <!-- Code block -->
+          <div class="bg-gray-100 rounded-xl p-4 text-xs font-mono text-gray-700">
+            <pre>
+  SELECT user_id, COUNT(*)
+  FROM events
+  WHERE ts > '2026-01'
+  GROUP BY 1;
+  </pre>
+          </div>
+        </div>
+
+      </div>
     </div>
   </section>
 
